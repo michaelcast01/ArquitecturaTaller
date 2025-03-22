@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: VentasSuplementacion
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: "TiendaSuplementacion"
+    ports:
+      - "3314:3306"
+    volumes:
+      - "C:/Users/USER/Desktop/Suplementos/mysql_data:/var/lib/mysql" 
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+     
+volumes:
+  mysql_data:
